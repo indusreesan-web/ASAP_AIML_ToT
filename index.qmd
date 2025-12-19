@@ -151,4 +151,3 @@ plt.xlabel("Hours Studied")
 plt.ylabel("Exam Score")
 plt.title("Linear Regression Example")
 plt.show()
----
