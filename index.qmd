@@ -106,3 +106,49 @@ Represents the predicted value of y when x = 0.
 It is the point where the line crosses the y-axis.
 
 ---
+---
+
+## Problem Statement
+Predict a student’s exam score based on the number of hours studied.
+
+- Independent Variable (X): Hours studied
+- Dependent Variable (Y): Exam score
+
+---
+
+## Linear Regression Python Code
+
+```python
+# Linear Regression Example
+# Predicting exam scores based on hours studied
+
+import numpy as np
+from sklearn.linear_model import LinearRegression
+import matplotlib.pyplot as plt
+
+# Input data (hours studied)
+X = np.array([1, 2, 3, 4, 5]).reshape(-1, 1)
+
+# Output data (exam scores)
+y = np.array([35, 40, 50, 55, 60])
+
+# Create the Linear Regression model
+model = LinearRegression()
+
+# Train the model
+model.fit(X, y)
+
+# Predict score for a new value
+hours = np.array([[6]])
+predicted_score = model.predict(hours)
+
+print("Predicted exam score for 6 hours of study:", predicted_score[0])
+
+# Visualization
+plt.scatter(X, y)
+plt.plot(X, model.predict(X))
+plt.xlabel("Hours Studied")
+plt.ylabel("Exam Score")
+plt.title("Linear Regression Example")
+plt.show()
+---
