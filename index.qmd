@@ -1,26 +1,108 @@
 ---
-title: "My Personal Webpage"
+title: "Linear Regression"
 ---
 
-Welcome to my personal page! I thrive on solving complex problems and love turning innovative ideas into reality. Whether I'm coding, designing, or exploring new fields, I bring dedication and curiosity to everything I do. Outside of work, I enjoy hiking, reading science fiction, and experimenting with new recipes. Here, you'll find insights into my projects, interests, and the journey I'm on to make a positive impact in the world. Thank you for visiting, and I hope you find something that inspires you!
-```{python}
-print("Hello")
-```
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+# Linear Regression – Detailed Notes
 
+## 1. Introduction
+Linear Regression is a type of supervised machine learning algorithm that learns from labelled datasets.  
+It maps the input data points to an optimized linear function, which can then be used to make predictions on new, unseen data.
 
-# titleq
-dsfdf
-sdfsdfsHello
-To learn more about Quarto websites visit https://quarto.org/docs/websites.
+It assumes that there is a **linear relationship** between the input and output variables.  
+This means the output changes at a constant rate as the input changes.  
+This relationship is represented using a **straight line**.
 
-titleq
-dsfdf sdfsdfs ## dssd
+---
 
+## 2. Example: Exam Score Prediction
+Consider a scenario where we want to predict a student’s exam score based on the number of hours studied.
 
-## dssd
-```html
-<html></html>
-```
+As the number of study hours increases, the exam score also increases.  
+This indicates a linear relationship.
 
-![fdgfg](images/user_image.png)
+### Variables:
+- **Independent Variable (Input)**: Hours studied  
+  (This is the variable we control or observe)
+- **Dependent Variable (Output)**: Exam score  
+  (This value depends on the hours studied)
+
+We use the independent variable to predict the dependent variable.
+
+---
+
+## 3. Best-Fit Line in Linear Regression
+In linear regression, the **best-fit line** is the straight line that best represents the relationship between the independent variable and the dependent variable.
+
+It minimizes the difference between:
+- Actual observed data points  
+- Predicted values produced by the model
+
+---
+
+## 4. Goal of the Best-Fit Line
+The main goal of linear regression is to find a straight line that **minimizes the prediction error**.
+
+This line helps us:
+- Understand the relationship between variables
+- Predict output values for new, unseen input data
+
+---
+
+## 5. Independent and Dependent Variables
+- **X** → Independent variable (Predictor)
+- **Y** → Dependent variable (Target)
+
+Linear regression can work with:
+- A single feature (Simple Linear Regression)
+- Multiple features (Multiple Linear Regression)
+
+---
+
+## 6. Equation of the Best-Fit Line
+For simple linear regression, the equation is:
+
+y = mx + b
+
+Where:
+- **y** → Predicted output value
+- **x** → Input value
+- **m** → Slope of the line  
+  (How much y changes when x changes)
+- **b** → Intercept  
+  (Value of y when x = 0)
+
+The model finds the best values of **m** and **b** so that predictions are as close as possible to actual data points.
+
+---
+
+## 7. Minimizing Error: Least Squares Method
+To find the best-fit line, linear regression uses the **Least Squares Method**.
+
+### Residual:
+The difference between actual and predicted values is called a residual.
+
+Residual = yᵢ − ŷᵢ
+
+Where:
+- **yᵢ** → Actual observed value
+- **ŷᵢ** → Predicted value for xᵢ
+
+### Sum of Squared Errors (SSE):
+The least squares method minimizes the sum of squared residuals:
+
+SSE = Σ (yᵢ − ŷᵢ)²
+
+This ensures the line fits the data as accurately as possible.
+
+---
+
+## 8. Interpretation of the Best-Fit Line
+### Slope (m):
+Indicates how much the dependent variable changes for each unit increase in the independent variable.  
+Example: If m = 5, then y increases by 5 units for every 1-unit increase in x.
+
+### Intercept (b):
+Represents the predicted value of y when x = 0.  
+It is the point where the line crosses the y-axis.
+
+---
