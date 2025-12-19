@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>My Personal Webpage – A Journey Within</title>
+<title>Linear Regression – A Journey Within</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,41 +19,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -157,7 +122,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">My Personal Webpage</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Linear Regression</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -228,9 +193,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#titleq" id="toc-titleq" class="nav-link active" data-scroll-target="#titleq">titleq</a>
+  <li><a href="#linear-regression-detailed-notes" id="toc-linear-regression-detailed-notes" class="nav-link active" data-scroll-target="#linear-regression-detailed-notes">Linear Regression – Detailed Notes</a>
   <ul class="collapse">
-  <li><a href="#dssd" id="toc-dssd" class="nav-link" data-scroll-target="#dssd">dssd</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">1. Introduction</a></li>
+  <li><a href="#example-exam-score-prediction" id="toc-example-exam-score-prediction" class="nav-link" data-scroll-target="#example-exam-score-prediction">2. Example: Exam Score Prediction</a>
+  <ul class="collapse">
+  <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables">Variables:</a></li>
+  </ul></li>
+  <li><a href="#best-fit-line-in-linear-regression" id="toc-best-fit-line-in-linear-regression" class="nav-link" data-scroll-target="#best-fit-line-in-linear-regression">3. Best-Fit Line in Linear Regression</a></li>
+  <li><a href="#goal-of-the-best-fit-line" id="toc-goal-of-the-best-fit-line" class="nav-link" data-scroll-target="#goal-of-the-best-fit-line">4. Goal of the Best-Fit Line</a></li>
+  <li><a href="#independent-and-dependent-variables" id="toc-independent-and-dependent-variables" class="nav-link" data-scroll-target="#independent-and-dependent-variables">5. Independent and Dependent Variables</a></li>
+  <li><a href="#equation-of-the-best-fit-line" id="toc-equation-of-the-best-fit-line" class="nav-link" data-scroll-target="#equation-of-the-best-fit-line">6. Equation of the Best-Fit Line</a></li>
+  <li><a href="#minimizing-error-least-squares-method" id="toc-minimizing-error-least-squares-method" class="nav-link" data-scroll-target="#minimizing-error-least-squares-method">7. Minimizing Error: Least Squares Method</a>
+  <ul class="collapse">
+  <li><a href="#residual" id="toc-residual" class="nav-link" data-scroll-target="#residual">Residual:</a></li>
+  <li><a href="#sum-of-squared-errors-sse" id="toc-sum-of-squared-errors-sse" class="nav-link" data-scroll-target="#sum-of-squared-errors-sse">Sum of Squared Errors (SSE):</a></li>
+  </ul></li>
+  <li><a href="#interpretation-of-the-best-fit-line" id="toc-interpretation-of-the-best-fit-line" class="nav-link" data-scroll-target="#interpretation-of-the-best-fit-line">8. Interpretation of the Best-Fit Line</a>
+  <ul class="collapse">
+  <li><a href="#slope-m" id="toc-slope-m" class="nav-link" data-scroll-target="#slope-m">Slope (m):</a></li>
+  <li><a href="#intercept-b" id="toc-intercept-b" class="nav-link" data-scroll-target="#intercept-b">Intercept (b):</a></li>
+  </ul></li>
   </ul></li>
   </ul>
 </nav>
@@ -240,7 +223,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">My Personal Webpage</h1>
+<h1 class="title">Linear Regression</h1>
 </div>
 
 
@@ -257,29 +240,98 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Welcome to my personal page! I thrive on solving complex problems and love turning innovative ideas into reality. Whether I’m coding, designing, or exploring new fields, I bring dedication and curiosity to everything I do. Outside of work, I enjoy hiking, reading science fiction, and experimenting with new recipes. Here, you’ll find insights into my projects, interests, and the journey I’m on to make a positive impact in the world. Thank you for visiting, and I hope you find something that inspires you!</p>
-<div id="8736471a" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Hello</code></pre>
-</div>
-</div>
-<p>To learn more about Quarto websites visit <a href="https://quarto.org/docs/websites" class="uri">https://quarto.org/docs/websites</a>.</p>
-<section id="titleq" class="level1">
-<h1>titleq</h1>
-<p>dsfdf sdfsdfsHello To learn more about Quarto websites visit https://quarto.org/docs/websites.</p>
-<p>titleq dsfdf sdfsdfs ## dssd</p>
-<section id="dssd" class="level2">
-<h2 class="anchored" data-anchor-id="dssd">dssd</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dt">&lt;</span><span class="kw">html</span><span class="dt">&gt;&lt;/</span><span class="kw">html</span><span class="dt">&gt;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/user_image.png" class="img-fluid figure-img"></p>
-<figcaption>fdgfg</figcaption>
-</figure>
-</div>
+<section id="linear-regression-detailed-notes" class="level1">
+<h1>Linear Regression – Detailed Notes</h1>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">1. Introduction</h2>
+<p>Linear Regression is a type of supervised machine learning algorithm that learns from labelled datasets.<br>
+It maps the input data points to an optimized linear function, which can then be used to make predictions on new, unseen data.</p>
+<p>It assumes that there is a <strong>linear relationship</strong> between the input and output variables.<br>
+This means the output changes at a constant rate as the input changes.<br>
+This relationship is represented using a <strong>straight line</strong>.</p>
+<hr>
+</section>
+<section id="example-exam-score-prediction" class="level2">
+<h2 class="anchored" data-anchor-id="example-exam-score-prediction">2. Example: Exam Score Prediction</h2>
+<p>Consider a scenario where we want to predict a student’s exam score based on the number of hours studied.</p>
+<p>As the number of study hours increases, the exam score also increases.<br>
+This indicates a linear relationship.</p>
+<section id="variables" class="level3">
+<h3 class="anchored" data-anchor-id="variables">Variables:</h3>
+<ul>
+<li><strong>Independent Variable (Input)</strong>: Hours studied<br>
+(This is the variable we control or observe)</li>
+<li><strong>Dependent Variable (Output)</strong>: Exam score<br>
+(This value depends on the hours studied)</li>
+</ul>
+<p>We use the independent variable to predict the dependent variable.</p>
+<hr>
+</section>
+</section>
+<section id="best-fit-line-in-linear-regression" class="level2">
+<h2 class="anchored" data-anchor-id="best-fit-line-in-linear-regression">3. Best-Fit Line in Linear Regression</h2>
+<p>In linear regression, the <strong>best-fit line</strong> is the straight line that best represents the relationship between the independent variable and the dependent variable.</p>
+<p>It minimizes the difference between: - Actual observed data points<br>
+- Predicted values produced by the model</p>
+<hr>
+</section>
+<section id="goal-of-the-best-fit-line" class="level2">
+<h2 class="anchored" data-anchor-id="goal-of-the-best-fit-line">4. Goal of the Best-Fit Line</h2>
+<p>The main goal of linear regression is to find a straight line that <strong>minimizes the prediction error</strong>.</p>
+<p>This line helps us: - Understand the relationship between variables - Predict output values for new, unseen input data</p>
+<hr>
+</section>
+<section id="independent-and-dependent-variables" class="level2">
+<h2 class="anchored" data-anchor-id="independent-and-dependent-variables">5. Independent and Dependent Variables</h2>
+<ul>
+<li><strong>X</strong> → Independent variable (Predictor)</li>
+<li><strong>Y</strong> → Dependent variable (Target)</li>
+</ul>
+<p>Linear regression can work with: - A single feature (Simple Linear Regression) - Multiple features (Multiple Linear Regression)</p>
+<hr>
+</section>
+<section id="equation-of-the-best-fit-line" class="level2">
+<h2 class="anchored" data-anchor-id="equation-of-the-best-fit-line">6. Equation of the Best-Fit Line</h2>
+<p>For simple linear regression, the equation is:</p>
+<p>y = mx + b</p>
+<p>Where: - <strong>y</strong> → Predicted output value - <strong>x</strong> → Input value - <strong>m</strong> → Slope of the line<br>
+(How much y changes when x changes) - <strong>b</strong> → Intercept<br>
+(Value of y when x = 0)</p>
+<p>The model finds the best values of <strong>m</strong> and <strong>b</strong> so that predictions are as close as possible to actual data points.</p>
+<hr>
+</section>
+<section id="minimizing-error-least-squares-method" class="level2">
+<h2 class="anchored" data-anchor-id="minimizing-error-least-squares-method">7. Minimizing Error: Least Squares Method</h2>
+<p>To find the best-fit line, linear regression uses the <strong>Least Squares Method</strong>.</p>
+<section id="residual" class="level3">
+<h3 class="anchored" data-anchor-id="residual">Residual:</h3>
+<p>The difference between actual and predicted values is called a residual.</p>
+<p>Residual = yᵢ − ŷᵢ</p>
+<p>Where: - <strong>yᵢ</strong> → Actual observed value - <strong>ŷᵢ</strong> → Predicted value for xᵢ</p>
+</section>
+<section id="sum-of-squared-errors-sse" class="level3">
+<h3 class="anchored" data-anchor-id="sum-of-squared-errors-sse">Sum of Squared Errors (SSE):</h3>
+<p>The least squares method minimizes the sum of squared residuals:</p>
+<p>SSE = Σ (yᵢ − ŷᵢ)²</p>
+<p>This ensures the line fits the data as accurately as possible.</p>
+<hr>
+</section>
+</section>
+<section id="interpretation-of-the-best-fit-line" class="level2">
+<h2 class="anchored" data-anchor-id="interpretation-of-the-best-fit-line">8. Interpretation of the Best-Fit Line</h2>
+<section id="slope-m" class="level3">
+<h3 class="anchored" data-anchor-id="slope-m">Slope (m):</h3>
+<p>Indicates how much the dependent variable changes for each unit increase in the independent variable.<br>
+Example: If m = 5, then y increases by 5 units for every 1-unit increase in x.</p>
+</section>
+<section id="intercept-b" class="level3">
+<h3 class="anchored" data-anchor-id="intercept-b">Intercept (b):</h3>
+<p>Represents the predicted value of y when x = 0.<br>
+It is the point where the line crosses the y-axis.</p>
+<hr>
 
 
+</section>
 </section>
 </section>
 
