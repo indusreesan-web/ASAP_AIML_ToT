@@ -21,6 +21,11 @@ website:
     search: true
     collapse-level: 2
     contents:
+       icon: Assignment1
+       text: Assignment
+       url: Assignment 1-https://indusreesan-web.github.io/ASAP_AIML_ToT/
+
+
       - icon: github
         text: Github
         url: https://github.com
